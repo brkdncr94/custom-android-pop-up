@@ -136,8 +136,8 @@ public class PopUpManager implements PopupWindow.OnDismissListener {
             }
 
             arrowHeight = arrowDrawable.getIntrinsicHeight();
-            windowYOffset = textHeight/2 + (originRect.width()/2); // Pop-up will be anchored to bottom-left corner of the anchor view
-            // That is why, we need to add the width of the anchor view to make sure pop-up is centered
+            windowYOffset = textHeight/2 + (originRect.height()/2); // Pop-up will be anchored to bottom-left corner of the anchor view
+            // That is why, we need to add the height of the anchor view to make sure pop-up is centered on the Y-axis.
 
             if((textHeight/2) >= yPos) { // check the space to the top of the screen
                 // in this case, reduce the offset to move the pop-up down
@@ -187,7 +187,7 @@ public class PopUpManager implements PopupWindow.OnDismissListener {
 
             arrowWidth = arrowDrawable.getIntrinsicWidth();
             windowXOffset = textWidth/2 - (originRect.width()/2); // Pop-up will be anchored to bottom-left corner of the anchor view
-            // That is why, we need to subtract the width of the anchor view to make sure pop-up is centered
+            // That is why, we need to subtract the width of the anchor view to make sure pop-up is centered on the X-axis.
 
             if( (xPos - (textWidth/2)) < edgePadding ) { // check the space to the left of the screen
                 // in this case, we have to add a left padding to the pop-up to make sure it satisfies minimum distance away from the edge
